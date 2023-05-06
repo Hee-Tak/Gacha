@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
-        android:id="@+id/ky"
+        android:id="@+id/sky"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/sky"
@@ -66,6 +66,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="직업: "
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amount_held"/>
+
+
+
+    <TextView
+        android:id="@+id/amount_held"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보유금액: "
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statistic"/>
+
+    <TextView
+        android:id="@+id/cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$-3,000"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/amount_held"
+        app:layout_constraintTop_toBottomOf="@id/statistic"/>
+
+
+    <TextView
+        android:id="@+id/fisherman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="4dp"
+        android:text="어부 1차"
+        app:layout_constraintStart_toEndOf="@id/job"
+        app:layout_constraintTop_toBottomOf="@id/cash" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
