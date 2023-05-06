@@ -28,17 +28,14 @@ class GamblingListActivity : AppCompatActivity() {
         listView.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
             when(position){
                 0 -> {
-                    val intent = Intent(this, RidingPetGachaActivity::class.java)
+                    val intent = Intent(this, ThreeCardMonteGamblingActivity::class.java)
                     startActivity(intent)
                 }
                 1 -> {
-                    val intent = Intent(this, HuntingPetGachaActivity::class.java)
+                    val intent = Intent(this, FlowerGamblingActivity::class.java)
                     startActivity(intent)
                 }
-                2 -> {
-                    val intent = Intent(this, DressUpGachaActivity::class.java)
-                    startActivity(intent)
-                }
+
                 else -> {
 
                 }
@@ -54,9 +51,14 @@ class GamblingListActivity : AppCompatActivity() {
         listView1.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
             when(position){
                 0 -> {
-
+                    val intent = Intent(this, WeaponReforgingActivity::class.java)
+                    startActivity(intent)
                 }
                 1 -> {
+                    val intent = Intent(this, ArmorWorkActivity::class.java)
+                    startActivity(intent)
+                }
+                else -> {
 
                 }
             }

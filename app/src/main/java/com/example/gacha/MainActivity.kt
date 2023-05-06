@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val button = findViewById<Button>(R.id.goto_fishing)
+        button.setOnClickListener{
+            val intent = Intent(this, FishingActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 

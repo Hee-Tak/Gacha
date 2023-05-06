@@ -37,7 +37,14 @@ class GachaListActivity : AppCompatActivity() {
                     val intent = Intent(this, DressUpGachaActivity::class.java)
                     startActivity(intent)
                 }
+                3 -> {
+                    val intent = Intent(this, ItemGachaActivity::class.java)
+                    startActivity(intent)
+                }
                 else -> {
+                    startActivity(
+                        Intent(this, EnchantGachaActivity::class.java)
+                    )
 
                 }
 
