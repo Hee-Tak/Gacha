@@ -108,5 +108,38 @@
         app:layout_constraintStart_toEndOf="@id/job"
         app:layout_constraintTop_toBottomOf="@id/cash" />
 
+    <Button
+        android:id="@+id/gambling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도박"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toEndOf="@id/my_button"
+        app:layout_constraintEnd_toStartOf="@id/goto_fishing"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상점"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/encyclopedia"
+        app:layout_constraintEnd_toStartOf="@id/inventory"/>
+
+    <TextView
+        android:id="@+id/fishing_sky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하늘을 낚는 어부"
+        android:textSize="30sp"
+        android:layout_marginTop="110dp"
+        android:textColor="#A3D7DA"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

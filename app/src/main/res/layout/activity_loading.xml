@@ -9,4 +9,17 @@
     <!-- 헤더를 위한 XML 파일 호출 -->
     <include layout="@layout/loading_screen"/>
 
+    <!-- 연습
+    <TextView
+        android:id="@+id/plz_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로딩 중 입니다."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"/> -->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

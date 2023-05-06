@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val showListButton1 = findViewById<Button>(R.id.gambling)
+        showListButton1.setOnClickListener{
+            val intent = Intent(this, GamblingListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 

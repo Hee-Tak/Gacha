@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class RidingPetGachaActivity : AppCompatActivity() {
+class DressUpGachaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_riding_pet_gacha)
+        setContentView(R.layout.activity_dress_up_gacha)
 
-        val button = findViewById<Button>(R.id.back_and_home)
+        val button = findViewById<Button>(R.id.back)
         button.setOnClickListener{
             onBackPressed()
         }
+
     }
+
+
 
     override fun onBackPressed() {
         super.onBackPressed()

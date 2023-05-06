@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Gacha"
         tools:targetApi="31">
         <activity
+            android:name=".GamblingListActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DressUpGachaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".GachaListActivity"
             android:exported="false">
             <meta-data

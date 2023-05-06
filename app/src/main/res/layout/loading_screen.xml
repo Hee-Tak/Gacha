@@ -9,4 +9,13 @@
         android:layout_height="394dp"
         android:src="@drawable/ic_baseline_catching_pokemon_24" />
 
+    <TextView
+        android:id="@+id/plz_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:text="로딩 중 입니다."/>
+
+
 </RelativeLayout>
