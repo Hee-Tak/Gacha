@@ -1,6 +1,7 @@
 package com.example.gacha
 
 import android.app.ListActivity
+import android.content.ClipDescription
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,25 +17,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       /* myButton = findViewById(R.id.my_button)
+        /* myButton = findViewById(R.id.my_button)
         myButton.setOnClickListener{
 
         }*/
 
         val showListButton = findViewById<Button>(R.id.my_button)
-        showListButton.setOnClickListener{
+        showListButton.setOnClickListener {
             val intent = Intent(this, GachaListActivity::class.java)
             startActivity(intent)
         }
 
         val showListButton1 = findViewById<Button>(R.id.gambling)
-        showListButton1.setOnClickListener{
+        showListButton1.setOnClickListener {
             val intent = Intent(this, GamblingListActivity::class.java)
             startActivity(intent)
         }
 
         val button = findViewById<Button>(R.id.goto_fishing)
-        button.setOnClickListener{
+        button.setOnClickListener {
             val intent = Intent(this, FishingActivity::class.java)
             startActivity(intent)
         }
@@ -42,6 +43,50 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
+}
+
+
+class Item(val name: String, val description: String, val image: Int) {
+    var quantity: Int = 0
+}
+
+class Inventory {
+    val itemList: MutableList<Item> = mutableListOf()
+
+    fun addItem(item: Item){
+        if(itemList.contains(item)){
+            val index = itemList.indexOf(item)
+            itemList[index].quantity++
+        } else {
+            item.quantity = 1
+            itemList.add(item)
+        }
+    }
+
+    fun removeItem(item: Item) {
+        if(itemList.contains(item)){
+            val index = itemList.indexOf(item)
+            if(itemList[index].quantity > 1){
+                itemList[index].quantity--
+            } else {
+                itemList.removeAt(index)
+            }
+        }
+    }
+
+    fun getItemCount(item: Item): Int {
+        return if(itemList.contains(item)){
+            itemList[itemList.indexOf(item)].quantity
+        } else {
+            0
+        }
+    }
+
+    fun clearInventory() {
+        itemList.clear()
+    }
+}
 
 
 /*
@@ -64,4 +109,3 @@ class MainActivity : AppCompatActivity() {
     }
 
  */
-}
