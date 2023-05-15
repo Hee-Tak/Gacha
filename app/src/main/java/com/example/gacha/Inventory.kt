@@ -39,7 +39,7 @@ class Inventory {
             println("인벤토리가 비어 있습니다.")
         } else {
             for(item in items){
-                println(item.toStrint())
+                println(item.toString())
             }
         }
     }
