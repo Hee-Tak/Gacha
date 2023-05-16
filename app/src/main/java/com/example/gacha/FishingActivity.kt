@@ -116,7 +116,7 @@ class FishingActivity : AppCompatActivity() {
 
     private fun startAutoChangeImage() {
         val random = Random()
-        val delay = (5..10).random() * 1000L //랜덤 시간 설정
+        val delay = (5..8).random() * 1000L //랜덤 시간 설정
         val countDownInterval = 1000L //카운트 다운 주기
         timeText.text = "SETUP 시간: ${(delay/1000)}초"
 
@@ -150,6 +150,7 @@ class FishingActivity : AppCompatActivity() {
                 }
             }
         }, delay)
+
     }
 
     private fun stopAutoChangeImage(){
