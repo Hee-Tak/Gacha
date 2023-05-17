@@ -11,15 +11,20 @@ import android.widget.TextView
 import android.widget.Toast
 import java.util.*
 
+private lateinit var imageView: ImageView
+private lateinit var timer: Timer
+private var fishingStarted: Boolean = false
+private var fishingSuccess: Boolean = false
+private lateinit var timeText: TextView
+private lateinit var timeText2: TextView
+private var countDownTimer: CountDownTimer? = null //CountDownTimer 객체를 저장하는 변수 추가
+private lateinit var failedTask: TimerTask
+
+
+
 class FishingActivity : AppCompatActivity() {
 
-    private lateinit var imageView: ImageView
-    private lateinit var timer: Timer
-    private var fishingStarted: Boolean = false
-    private var fishingSuccess: Boolean = false
-    private lateinit var timeText: TextView
-    private lateinit var timeText2: TextView
-    private var countDownTimer: CountDownTimer? = null //CountDownTimer 객체를 저장하는 변수 추가
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +56,7 @@ class FishingActivity : AppCompatActivity() {
                         fishingStarted = false
                         fishingSuccess = false
                         Toast.makeText(this, "낚시 실패! 좀 더 기다리세요.", Toast.LENGTH_SHORT).show()
+                        countDownTimer?.cancel()
                     },500)
                 }
                 else if(imageView.tag == "fishing3"){
@@ -63,6 +69,9 @@ class FishingActivity : AppCompatActivity() {
                             fishingStarted = false
                             fishingSuccess = false
                             Toast.makeText(this, "낚시 성공!", Toast.LENGTH_SHORT).show()
+
+                            failedTask.cancel()
+                            timer.cancel()
                         }
                     }, 500)
                 }
@@ -99,6 +108,7 @@ class FishingActivity : AppCompatActivity() {
                 fishingStarted = false
                 fishingSuccess = false
                 Toast.makeText(this, "낚시 실패!", Toast.LENGTH_SHORT).show()
+                countDownTimer?.cancel()
             }
 
         }
@@ -131,8 +141,7 @@ class FishingActivity : AppCompatActivity() {
             }
         }.start()
 
-        timer = Timer()
-        timer.schedule(object : TimerTask() {
+        failedTask = object: TimerTask() {
             override fun run() {
                 Handler(mainLooper).post {
                     changeImage()
@@ -144,25 +153,31 @@ class FishingActivity : AppCompatActivity() {
                             fishingStarted = false
                             fishingSuccess = false
                             Toast.makeText(this@FishingActivity, "낚시 실패! 물고기 도망갔어요ㅠ.", Toast.LENGTH_SHORT).show()
-                        },4000)
+                        },6000)
+
 
                     }
                 }
             }
-        }, delay)
+
+        }
+
+        timer = Timer()
+        timer.schedule(failedTask , delay)
 
     }
 
     private fun stopAutoChangeImage(){
-        countDownTimer?.cancel() //CountDownTimer 객체를 취소
+        //countDownTimer?.cancel() //CountDownTimer 객체를 취소
         timer.cancel()
+        failedTask.cancel()
         timeText.text ="*******"
         timeText2.text="*******"
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        countDownTimer?.cancel() //CountDownTimer 객체를 취소
+        //countDownTimer?.cancel() //CountDownTimer 객체를 취소
         timer.cancel() // 타이머 종료
         timeText.text="+++++++"
         timeText2.text="+++++++"
