@@ -157,7 +157,6 @@ class FishingActivity : AppCompatActivity() {
                     }
                 }
             }
-
         }
         timer = Timer()
         timer.schedule(failedTask , delay)
