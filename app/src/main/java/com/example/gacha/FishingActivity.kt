@@ -25,8 +25,6 @@ private lateinit var failedTask: TimerTask
 class FishingActivity : AppCompatActivity() {
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fishing)
