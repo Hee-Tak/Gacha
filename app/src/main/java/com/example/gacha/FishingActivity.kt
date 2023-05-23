@@ -135,7 +135,7 @@ class FishingActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                timeText2.text = "-----"
+                timeText2.text = "---끝---"
             }
         }.start()
 
