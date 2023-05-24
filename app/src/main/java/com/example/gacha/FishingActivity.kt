@@ -107,6 +107,7 @@ class FishingActivity : AppCompatActivity() {
                 fishingSuccess = false
                 Toast.makeText(this, "낚시 실패!", Toast.LENGTH_SHORT).show()
                 countDownTimer?.cancel()
+
             }
 
         }
