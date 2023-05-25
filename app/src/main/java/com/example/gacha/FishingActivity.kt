@@ -147,12 +147,15 @@ class FishingActivity : AppCompatActivity() {
                     if(imageView.tag == "fishing3"){
                         stopAutoChangeImage()
                         Handler(mainLooper).postDelayed({
-                            imageView.setImageResource(R.drawable.fishing1)
-                            imageView.tag = "fishing1"
-                            fishingStarted = false
-                            fishingSuccess = false
-                            Toast.makeText(this@FishingActivity, "낚시 실패! 물고기 도망갔어요ㅠ.", Toast.LENGTH_SHORT).show()
-                        },6000)
+                            if(imageView.tag == "fishing3"){
+                                imageView.setImageResource(R.drawable.fishing1)
+                                imageView.tag = "fishing1"
+                                fishingStarted = false
+                                fishingSuccess = false
+                                Toast.makeText(this@FishingActivity, "낚시 실패! 물고기 도망갔어요ㅠ.", Toast.LENGTH_SHORT).show()
+
+                            }
+                            },6000)
                     }
                 }
             }
