@@ -113,15 +113,9 @@ class FishingActivity : AppCompatActivity() {
         }
     }
 
-
-
-
     fun changeImage(view: View) {
         changeImage()
     }
-
-
-
 
     private fun startAutoChangeImage() {
         val random = Random()
