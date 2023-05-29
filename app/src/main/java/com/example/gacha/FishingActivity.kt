@@ -166,7 +166,7 @@ class FishingActivity : AppCompatActivity() {
         timeText.text ="*******"
         timeText2.text="*******"
     }
-
+    //=============================================================
     override fun onDestroy() {
         super.onDestroy()
         //countDownTimer?.cancel() //CountDownTimer 객체를 취소
@@ -174,6 +174,7 @@ class FishingActivity : AppCompatActivity() {
         timeText.text="+++++++"
         timeText2.text="+++++++"
     }
+    //============================================================
 }
 
 
